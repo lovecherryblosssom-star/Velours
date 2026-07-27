@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velours — A Bathhouse &amp; Wellness Atelier</title>
+  <meta name="description" content="Velours is a thermal bathhouse and wellness atelier. Thermal pools, warm oils, and the slow architecture of rest.">
+
+  <!-- Favicon: a small ripple mark -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='10' fill='none' stroke='%23C7A268' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='%23C7A268' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='42' fill='none' stroke='%23C7A268' stroke-width='4'/%3E%3C/svg%3E">
+
+  <!-- Fonts: Fraunces (display, soft old-style serif) + Karla (body, humanist sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 (structure + real components — visual skin is overridden in style.css) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons — the official companion icon set -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#vlrsNavLinks" data-bs-offset="120" tabindex="0">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <!-- Components: Navbar, Collapse (mobile toggle), Dropdown, Scrollspy (on body) -->
+  <nav class="navbar navbar-expand-lg fixed-top vlrs-nav" id="vlrsNav">
+    <div class="container">
+      <a class="navbar-brand vlrs-brand" href="#hero">VELOURS</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#vlrsNavLinks" aria-controls="vlrsNavLinks" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="vlrs-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="vlrsNavLinks">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#ritual">The Ritual</a></li>
+          <li class="nav-item"><a class="nav-link" href="#treatments">Treatments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#suites">Suites</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navMoreToggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">More</a>
+            <ul class="dropdown-menu" aria-labelledby="navMoreToggle">
+              <li><a class="dropdown-item" href="#philosophy">Philosophy</a></li>
+              <li><a class="dropdown-item" href="#gallery">The Space</a></li>
+              <li><a class="dropdown-item" href="#journal">Journal</a></li>
+              <li><a class="dropdown-item" href="#faq">FAQ</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="nav-link vlrs-visit-link" data-bs-toggle="offcanvas" data-bs-target="#visitOffcanvas" aria-controls="visitOffcanvas">
+              <i class="bi bi-geo-alt"></i> Visit
+            </button>
+          </li>
+          <li class="nav-item ms-lg-3">
+            <a class="vlrs-btn vlrs-btn-outline" href="#reserve">Reserve</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <header class="vlrs-hero" id="hero">
+      <div class="vlrs-ripples" aria-hidden="true">
+        <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="300" cy="300" r="90"></circle>
+          <circle cx="300" cy="300" r="170"></circle>
+          <circle cx="300" cy="300" r="250"></circle>
+          <circle cx="300" cy="300" r="330"></circle>
+        </svg>
+      </div>
+      <div class="container vlrs-hero-inner">
+        <p class="vlrs-eyebrow">A Bathhouse &amp; Wellness Atelier</p>
+        <h1 class="vlrs-hero-title">Where stillness<br>has <em>texture</em></h1>
+        <p class="vlrs-hero-sub">Thermal pools, warm oils, and the slow architecture of rest —<br class="d-none d-md-block"> an hour set aside for nothing but yourself.</p>
+        <div class="vlrs-hero-actions">
+          <a href="#reserve" class="vlrs-btn vlrs-btn-solid">Reserve Your Ritual</a>
+          <a href="#ritual" class="vlrs-link-arrow">See how it unfolds ↓</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ PHILOSOPHY ============ -->
+    <section class="vlrs-section vlrs-bg-cream" id="philosophy">
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-5">
+            <div class="vlrs-mark-wrap">
+              <svg class="vlrs-sprig" viewBox="0 0 200 260" aria-hidden="true">
+                <path d="M100 250 C 100 180, 100 120, 100 20" />
+                <path d="M100 60 C 70 50, 50 30, 40 10" />
+                <path d="M100 90 C 130 80, 150 60, 158 40" />
+                <path d="M100 120 C 68 112, 46 94, 36 74" />
+                <path d="M100 150 C 132 142, 154 124, 164 104" />
+                <path d="M100 180 C 72 172, 52 156, 44 138" />
+              </svg>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="vlrs-eyebrow vlrs-eyebrow-dark">Our Philosophy</p>
+            <p class="vlrs-dropcap">Water remembers what the body forgets. Every ritual at Velours begins the same way — slow immersion, low light, the sound of nothing at all — because rest is not an amenity. It is a discipline we have spent a decade refining.</p>
+            <p class="vlrs-body-text">We keep our rituals few and our attention undivided. No phones past the entry, no clocks past the lobby, no music but the pools themselves. What's left is simply you, and an hour that belongs to no one else.</p>
+            <div class="vlrs-stat-row">
+              <div><span class="vlrs-stat-num">3</span><span class="vlrs-stat-label">thermal pools</span></div>
+              <div><span class="vlrs-stat-num">10</span><span class="vlrs-stat-label">years refining the ritual</span></div>
+              <div><span class="vlrs-stat-num">1</span><span class="vlrs-stat-label">guest at a time, per room</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE RITUAL (real sequence — numbering earns its place) ============ -->
+    <section class="vlrs-section vlrs-bg-blush" id="ritual">
+      <div class="container">
+        <div class="vlrs-section-head">
+          <p class="vlrs-eyebrow vlrs-eyebrow-dark">The Ritual</p>
+          <h2 class="vlrs-h2">Four movements, one hour</h2>
+        </div>
+        <div class="row gy-5 vlrs-ritual-row">
+          <div class="col-md-6 col-lg-3 vlrs-ritual-step">
+            <span class="vlrs-step-num">01</span>
+            <h3 class="vlrs-h3">Arrive</h3>
+            <p>Change into linen robes and take tea steeped with chamomile and rose in the quiet room.</p>
+          </div>
+          <div class="col-md-6 col-lg-3 vlrs-ritual-step">
+            <span class="vlrs-step-num">02</span>
+            <h3 class="vlrs-h3">Immerse</h3>
+            <p>Move through three thermal pools, each drawn a few degrees cooler than the last.</p>
+          </div>
+          <div class="col-md-6 col-lg-3 vlrs-ritual-step">
+            <span class="vlrs-step-num">03</span>
+            <h3 class="vlrs-h3">Rest</h3>
+            <p>Lie beneath warm stone in the resting hall while an attendant works oil into tired shoulders.</p>
+          </div>
+          <div class="col-md-6 col-lg-3 vlrs-ritual-step">
+            <span class="vlrs-step-num">04</span>
+            <h3 class="vlrs-h3">Renew</h3>
+            <p>Finish beneath a cold rinse, then step into the garden for something warm to drink.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TREATMENTS ============ -->
+    <!-- Components: Nav (pills) + Tab content, Card, Badge, Popover -->
+    <section class="vlrs-section vlrs-bg-cream" id="treatments">
+      <div class="container">
+        <div class="vlrs-section-head">
+          <p class="vlrs-eyebrow vlrs-eyebrow-dark">Treatments</p>
+          <h2 class="vlrs-h2">Choose your ritual</h2>
+        </div>
+
+        <ul class="nav nav-pills vlrs-pills mb-5" id="treatmentTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="bathing-tab" data-bs-toggle="tab" data-bs-target="#bathing-pane" type="button" role="tab" aria-controls="bathing-pane" aria-selected="true">Bathing Rituals</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="massage-tab" data-bs-toggle="tab" data-bs-target="#massage-pane" type="button" role="tab" aria-controls="massage-pane" aria-selected="false">Massage</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="private-tab" data-bs-toggle="tab" data-bs-target="#private-pane" type="button" role="tab" aria-controls="private-pane" aria-selected="false">Private Rooms</button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="treatmentTabsContent">
+
+          <div class="tab-pane fade show active" id="bathing-pane" role="tabpanel" aria-labelledby="bathing-tab" tabindex="0">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <article class="card vlrs-card">
+                  <div class="card-body">
+                    <div class="vlrs-card-top">
+                      <span class="vlrs-card-duration">90 MIN</span>
+                      <span class="badge vlrs-badge" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-placement="top" data-bs-content="Booked by roughly four in ten first-time guests.">Most Booked</span>
+                    </div>
+                    <h3 class="vlrs-h3">Full Immersion</h3>
+                    <p>A complete pass through all three pools, hot stone rest, and a thirty-minute oil massage.</p>
+                    <span class="vlrs-price">$220</span>
+                  </div>
+                </article>
+              </div>
+              <div class="col">
+                <article class="card vlrs-card">
+                  <div class="card-body">
+                    <span class="vlrs-card-duration">45 MIN</span>
+                    <h3 class="vlrs-h3">Rose Steam</h3>
+                    <p>A steam room infused with rose and eucalyptus, finished with a cold plunge.</p>
+                    <span class="vlrs-price">$95</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="massage-pane" role="tabpanel" aria-labelledby="massage-tab" tabindex="0">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <article class="card vlrs-card">
+                  <div class="card-body">
+                    <span class="vlrs-card-duration">60 MIN</span>
+                    <h3 class="vlrs-h3">Warm Stone Massage</h3>
+                    <p>Heated basalt stones worked slowly along the spine and shoulders.</p>
+                    <span class="vlrs-price">$150</span>
+                  </div>
+                </article>
+              </div>
+              <div class="col">
+                <article class="card vlrs-card">
+                  <div class="card-body">
+                    <span class="vlrs-card-duration">30 MIN</span>
+                    <h3 class="vlrs-h3">Silk Hand Ritual</h3>
+                    <p>A warm oil hand and forearm massage, finished with silk mitts.</p>
+                    <span class="vlrs-price">$60</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="private-pane" role="tabpanel" aria-labelledby="private-tab" tabindex="0">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <article class="card vlrs-card">
+                  <div class="card-body">
+                    <span class="vlrs-card-duration">60 MIN</span>
+                    <h3 class="vlrs-h3">The Quiet Hour</h3>
+                    <p>A private soaking room, candlelight, and tea service. No attendant, no agenda.</p>
+                    <span class="vlrs-price">$130</span>
+                  </div>
+                </article>
+              </div>
+              <div class="col">
+                <article class="card vlrs-card">
+                  <div class="card-body">
+                    <div class="vlrs-card-top">
+                      <span class="vlrs-card-duration">120 MIN</span>
+                      <span class="badge vlrs-badge vlrs-badge-new">New</span>
+                    </div>
+                    <h3 class="vlrs-h3">Evening Immersion</h3>
+                    <p>The full ritual, followed by a quiet dinner service in the garden.</p>
+                    <span class="vlrs-price">$280</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE BATHS ============ -->
+    <!-- Component: Tooltip -->
+    <section class="vlrs-section vlrs-bg-deep" id="baths">
+      <div class="vlrs-ripples vlrs-ripples-right" aria-hidden="true">
+        <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="300" cy="300" r="90"></circle>
+          <circle cx="300" cy="300" r="170"></circle>
+          <circle cx="300" cy="300" r="250"></circle>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="vlrs-section-head vlrs-section-head-light">
+          <p class="vlrs-eyebrow">The Baths</p>
+          <h2 class="vlrs-h2 vlrs-h2-light">Three pools, each with its own purpose</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="vlrs-pool">
+              <span class="vlrs-pool-temp" data-bs-toggle="tooltip" data-bs-placement="top" title="Most guests spend 8–10 minutes here before moving on.">38°C</span>
+              <h3 class="vlrs-h3 vlrs-h3-light">The Warm Pool</h3>
+              <p class="vlrs-body-text-light">For arriving. Deep, still, and dim — the first place your shoulders drop.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="vlrs-pool">
+              <span class="vlrs-pool-temp" data-bs-toggle="tooltip" data-bs-placement="top" title="The magnesium content is highest in the early morning draw.">34°C</span>
+              <h3 class="vlrs-h3 vlrs-h3-light">The Mineral Pool</h3>
+              <p class="vlrs-body-text-light">For lingering. Drawn from a natural spring, high in magnesium.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="vlrs-pool">
+              <span class="vlrs-pool-temp" data-bs-toggle="tooltip" data-bs-placement="top" title="Exhale as you enter — it shortens the shock considerably.">12°C</span>
+              <h3 class="vlrs-h3 vlrs-h3-light">The Cold Plunge</h3>
+              <p class="vlrs-body-text-light">For leaving renewed. Thirty seconds is all anyone needs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="vlrs-baths-footer">
+          <span>Open daily, 7am – 10pm</span>
+          <span class="vlrs-dot">·</span>
+          <span>Private bathing by reservation only</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE SPACE (gallery) ============ -->
+    <!-- Layout: container-fluid + flex/overflow utilities + ratio helper. -->
+    <!-- These frames are placeholders — see the note in chat for the exact shot list. -->
+    <section class="vlrs-section vlrs-bg-cream vlrs-gallery-section" id="gallery">
+      <div class="container">
+        <div class="vlrs-section-head">
+          <p class="vlrs-eyebrow vlrs-eyebrow-dark">The Space</p>
+          <h2 class="vlrs-h2">A quick look around</h2>
+        </div>
+      </div>
+      <div class="container-fluid px-0">
+        <div class="d-flex flex-nowrap overflow-x-auto vlrs-gallery-strip gap-3 px-3 px-md-5">
+          <div class="vlrs-gallery-item flex-shrink-0">
+            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-a"></div>
+            <span class="vlrs-gallery-label">Entrance courtyard</span>
+          </div>
+          <div class="vlrs-gallery-item flex-shrink-0">
+            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-b"></div>
+            <span class="vlrs-gallery-label">The warm pool</span>
+          </div>
+          <div class="vlrs-gallery-item flex-shrink-0">
+            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-c"></div>
+            <span class="vlrs-gallery-label">Resting hall</span>
+          </div>
+          <div class="vlrs-gallery-item flex-shrink-0">
+            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-d"></div>
+            <span class="vlrs-gallery-label">Robes &amp; linen detail</span>
+          </div>
+          <div class="vlrs-gallery-item flex-shrink-0">
+            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-e"></div>
+            <span class="vlrs-gallery-label">Garden Room suite</span>
+          </div>
+          <div class="vlrs-gallery-item flex-shrink-0">
+            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-f"></div>
+            <span class="vlrs-gallery-label">Treatment room</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SUITES ============ -->
+    <!-- Components: Card, Ratio helper, List group -->
+    <section class="vlrs-section vlrs-bg-cream" id="suites">
+      <div class="container">
+        <div class="vlrs-section-head">
+          <p class="vlrs-eyebrow vlrs-eyebrow-dark">Suites</p>
+          <h2 class="vlrs-h2">For those who'd rather not leave</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="card vlrs-suite">
+              <div class="ratio ratio-4x3 vlrs-suite-swatch vlrs-swatch-blush"></div>
+              <div class="card-body vlrs-suite-body">
+                <h3 class="vlrs-h3">The Garden Room</h3>
+                <p>Opens onto the herb garden, with a soaking tub built into the floor.</p>
+                <ul class="list-group list-group-flush vlrs-amenities">
+                  <li class="list-group-item">Floor-set soaking tub</li>
+                  <li class="list-group-item">Private garden access</li>
+                </ul>
+                <span class="vlrs-price">From $340 / night</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card vlrs-suite">
+              <div class="ratio ratio-4x3 vlrs-suite-swatch vlrs-swatch-gold"></div>
+              <div class="card-body vlrs-suite-body">
+                <h3 class="vlrs-h3">The Attic Room</h3>
+                <p>Vaulted ceilings and a copper tub set beneath a skylight.</p>
+                <ul class="list-group list-group-flush vlrs-amenities">
+                  <li class="list-group-item">Copper soaking tub</li>
+                  <li class="list-group-item">Skylight over the bed</li>
+                </ul>
+                <span class="vlrs-price">From $310 / night</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card vlrs-suite">
+              <div class="ratio ratio-4x3 vlrs-suite-swatch vlrs-swatch-wine"></div>
+              <div class="card-body vlrs-suite-body">
+                <h3 class="vlrs-h3">The Quiet Room</h3>
+                <p>No windows, no clock. Built for one purpose only — sleep.</p>
+                <ul class="list-group list-group-flush vlrs-amenities">
+                  <li class="list-group-item">Full blackout draping</li>
+                  <li class="list-group-item">No clocks, ever</li>
+                </ul>
+                <span class="vlrs-price">From $260 / night</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <!-- Component: Carousel -->
+    <section class="vlrs-section vlrs-bg-blush" id="testimonials">
+      <div class="container">
+        <div id="vlrsCarousel" class="carousel slide vlrs-carousel" data-bs-ride="carousel" data-bs-interval="6000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <blockquote class="vlrs-quote">"I have stopped setting an alarm for the mornings after. That alone is worth the visit."</blockquote>
+              <p class="vlrs-quote-attr">— R. Sana, guest since 2019</p>
+            </div>
+            <div class="carousel-item">
+              <blockquote class="vlrs-quote">"The cold plunge undid something in my shoulders that four physiotherapists couldn't."</blockquote>
+              <p class="vlrs-quote-attr">— J. Malik</p>
+            </div>
+            <div class="carousel-item">
+              <blockquote class="vlrs-quote">"It's the only hour of my week where my phone doesn't cross my mind."</blockquote>
+              <p class="vlrs-quote-attr">— A. Farooqi</p>
+            </div>
+          </div>
+          <div class="vlrs-carousel-dots">
+            <button type="button" data-bs-target="#vlrsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonial 1"></button>
+            <button type="button" data-bs-target="#vlrsCarousel" data-bs-slide-to="1" aria-label="Testimonial 2"></button>
+            <button type="button" data-bs-target="#vlrsCarousel" data-bs-slide-to="2" aria-label="Testimonial 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNAL ============ -->
+    <!-- Components: Card, Pagination -->
+    <section class="vlrs-section vlrs-bg-cream" id="journal">
+      <div class="container">
+        <div class="vlrs-section-head">
+          <p class="vlrs-eyebrow vlrs-eyebrow-dark">Journal</p>
+          <h2 class="vlrs-h2">Notes from the bathhouse</h2>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <article class="card vlrs-journal-card">
+              <div class="card-body">
+                <p class="vlrs-kicker">Ritual</p>
+                <h3 class="vlrs-h3"><a href="#">On the Discipline of Doing Nothing</a></h3>
+                <p>Why we schedule rest the way we schedule everything else — and what changed when we stopped.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4">
+            <article class="card vlrs-journal-card">
+              <div class="card-body">
+                <p class="vlrs-kicker">Practice</p>
+                <h3 class="vlrs-h3"><a href="#">A Short History of the Cold Plunge</a></h3>
+                <p>From Roman frigidaria to Finnish lakes — the long, cold lineage of our smallest pool.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4">
+            <article class="card vlrs-journal-card">
+              <div class="card-body">
+                <p class="vlrs-kicker">Dispatches</p>
+                <h3 class="vlrs-h3"><a href="#">Notes From the Quiet Room</a></h3>
+                <p>A guest wrote to us after her stay. We've kept her letter, with her permission.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+        <nav aria-label="Journal pages" class="vlrs-pagination-wrap">
+          <ul class="pagination vlrs-pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">‹</a></li>
+            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">›</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <!-- Component: Accordion (built on Collapse) -->
+    <section class="vlrs-section vlrs-bg-blush" id="faq">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <div class="vlrs-section-head">
+              <p class="vlrs-eyebrow vlrs-eyebrow-dark">Before You Visit</p>
+              <h2 class="vlrs-h2">A few common questions</h2>
+            </div>
+            <div class="accordion vlrs-accordion" id="vlrsFaq">
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    What should I bring?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#vlrsFaq">
+                  <div class="accordion-body">Nothing at all. Robes, sandals, and towels are provided. We only ask that you arrive fifteen minutes early to change and settle in.</div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    What is your cancellation policy?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#vlrsFaq">
+                  <div class="accordion-body">Rituals may be rescheduled free of charge up to 24 hours in advance. Later changes are subject to a fifty percent charge.</div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    Is there a minimum age?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#vlrsFaq">
+                  <div class="accordion-body">Velours is a space reserved for guests sixteen and older, so that the quiet stays unbroken for everyone.</div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    Can I book a ritual for two?
+                  </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#vlrsFaq">
+                  <div class="accordion-body">Yes. The Quiet Hour and Evening Immersion can both be booked as a shared ritual — simply note it under "message" when reserving.</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESERVE ============ -->
+    <!-- Components: Alert, Progress, Spinner, Modal (on submit) -->
+    <section class="vlrs-section vlrs-bg-deep" id="reserve">
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-lg-5">
+            <p class="vlrs-eyebrow">Reserve</p>
+            <h2 class="vlrs-h2 vlrs-h2-light">Set aside your hour</h2>
+            <p class="vlrs-body-text-light">Tell us which ritual calls to you, and when. We'll confirm within a day, and hold your pool time until then.</p>
+
+            <div class="alert alert-dismissible vlrs-alert" role="alert">
+              Evening slots are limited this month — reserve early.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            <div class="vlrs-availability">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="vlrs-label vlrs-label-inline">Today's evening availability</span>
+                <span class="vlrs-availability-count">3 of 5 slots</span>
+              </div>
+              <div class="progress vlrs-progress" role="progressbar" aria-label="Evening slots remaining" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar vlrs-progress-bar" style="width: 60%"></div>
+              </div>
+            </div>
+
+            <div class="vlrs-contact-block">
+              <p><span>Visit</span>14 Willow Lane, Garden District</p>
+              <p><span>Hours</span>7am – 10pm, daily</p>
+              <p><span>Call</span>+1 (555) 014‑2200</p>
+              <p><span>Write</span>reserve@velours.example</p>
+            </div>
+          </div>
+          <div class="col-lg-6 offset-lg-1">
+            <form class="vlrs-form" id="vlrsForm" novalidate>
+              <div class="row g-4">
+                <div class="col-sm-6">
+                  <label for="fName" class="vlrs-label">Name</label>
+                  <input type="text" class="vlrs-input" id="fName" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="fEmail" class="vlrs-label">Email</label>
+                  <input type="email" class="vlrs-input" id="fEmail" required>
+                </div>
+                <div class="col-sm-6">
+                  <label for="fRitual" class="vlrs-label">Preferred ritual</label>
+                  <select class="vlrs-input" id="fRitual">
+                    <option>Full Immersion — 90 min</option>
+                    <option>Rose Steam — 45 min</option>
+                    <option>Warm Stone Massage — 60 min</option>
+                    <option>Silk Hand Ritual — 30 min</option>
+                    <option>The Quiet Hour — 60 min</option>
+                    <option>Evening Immersion — 120 min</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="fDate" class="vlrs-label">Preferred date</label>
+                  <input type="date" class="vlrs-input" id="fDate">
+                </div>
+                <div class="col-12">
+                  <label for="fMessage" class="vlrs-label">Message <span class="vlrs-optional">(optional)</span></label>
+                  <textarea class="vlrs-input" id="fMessage" rows="3"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="vlrs-btn vlrs-btn-solid vlrs-btn-full" id="vlrsSubmitBtn">
+                    <span class="vlrs-btn-label">Request Reservation</span>
+                    <span class="spinner-border spinner-border-sm vlrs-btn-spinner d-none" role="status" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <!-- Component: Input group (newsletter) -->
+  <footer class="vlrs-footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <p class="vlrs-brand vlrs-footer-brand">VELOURS</p>
+          <p class="vlrs-footer-tagline">A bathhouse &amp; wellness atelier.<br>Where stillness has texture.</p>
+        </div>
+        <div class="col-6 col-lg-2 offset-lg-1">
+          <p class="vlrs-footer-head">Visit</p>
+          <ul class="vlrs-footer-list">
+            <li><a href="#ritual">The Ritual</a></li>
+            <li><a href="#treatments">Treatments</a></li>
+            <li><a href="#suites">Suites</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <p class="vlrs-footer-head">Learn</p>
+          <ul class="vlrs-footer-list">
+            <li><a href="#philosophy">Philosophy</a></li>
+            <li><a href="#journal">Journal</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <p class="vlrs-footer-head">Stay in touch</p>
+          <form class="vlrs-newsletter" id="vlrsNewsletter">
+            <div class="input-group vlrs-newsletter-group">
+              <span class="input-group-text vlrs-newsletter-icon"><i class="bi bi-envelope"></i></span>
+              <input type="email" class="form-control" placeholder="Your email" aria-label="Email for newsletter" required>
+              <button type="submit" class="vlrs-newsletter-submit" aria-label="Subscribe">→</button>
+            </div>
+          </form>
+          <div class="vlrs-social">
+            <a href="#">Instagram</a>
+            <a href="#">Pinterest</a>
+          </div>
+        </div>
+      </div>
+      <div class="vlrs-footer-bottom">
+        <span>© 2026 Velours Bathhouse. All rights reserved.</span>
+        <span class="vlrs-footer-mark">✻</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ RESERVATION CONFIRMATION MODAL ============ -->
+  <div class="modal fade vlrs-modal" id="vlrsModal" tabindex="-1" aria-labelledby="vlrsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <svg class="vlrs-modal-ripple" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="14"></circle>
+            <circle cx="50" cy="50" r="26"></circle>
+            <circle cx="50" cy="50" r="38"></circle>
+          </svg>
+          <h3 class="vlrs-h3">Request received</h3>
+          <p>Thank you — we'll confirm your ritual by email within a day, and hold your pool time until then.</p>
+          <button type="button" class="vlrs-btn vlrs-btn-outline" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ VISIT OFFCANVAS ============ -->
+  <div class="offcanvas offcanvas-end vlrs-offcanvas" tabindex="-1" id="visitOffcanvas" aria-labelledby="visitOffcanvasLabel">
+    <div class="offcanvas-header">
+      <h3 class="offcanvas-title vlrs-h3" id="visitOffcanvasLabel">Visit Velours</h3>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <p class="vlrs-offcanvas-line"><i class="bi bi-geo-alt"></i> 14 Willow Lane, Garden District</p>
+      <p class="vlrs-offcanvas-line vlrs-offcanvas-note">Enter through the courtyard gate — the bathhouse door is unmarked, look for the ripple carved into the stone.</p>
+      <table class="table table-borderless table-sm vlrs-hours-table">
+        <tbody>
+          <tr><td>Mon – Thu</td><td>7am – 9pm</td></tr>
+          <tr><td>Fri – Sat</td><td>7am – 10pm</td></tr>
+          <tr><td>Sunday</td><td>8am – 8pm</td></tr>
+        </tbody>
+      </table>
+      <p class="vlrs-offcanvas-line"><i class="bi bi-telephone"></i> +1 (555) 014-2200</p>
+      <p class="vlrs-offcanvas-line"><i class="bi bi-envelope"></i> reserve@velours.example</p>
+      <a href="#reserve" class="vlrs-btn vlrs-btn-solid vlrs-btn-full" data-bs-dismiss="offcanvas">Reserve a Ritual</a>
+    </div>
+  </div>
+
+  <!-- ============ NEWSLETTER TOAST ============ -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3 vlrs-toast-container">
+    <div id="vlrsToast" class="toast vlrs-toast" role="status" aria-live="polite" aria-atomic="true">
+      <div class="toast-body d-flex align-items-center justify-content-between">
+        <span>Thank you — you're on the list.</span>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
