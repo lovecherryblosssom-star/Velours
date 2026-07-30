@@ -6,8 +6,10 @@
   <title>Velours — A Bathhouse &amp; Wellness Atelier</title>
   <meta name="description" content="Velours is a thermal bathhouse and wellness atelier. Thermal pools, warm oils, and the slow architecture of rest.">
 
-  <!-- Favicon: a small ripple mark -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='10' fill='none' stroke='%23C7A268' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='26' fill='none' stroke='%23C7A268' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='42' fill='none' stroke='%23C7A268' stroke-width='4'/%3E%3C/svg%3E">
+  <!-- Favicon: the finished V mark (see assets/logo/ for the full asset set) -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo/velours-favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon-180.png">
 
   <!-- Fonts: Fraunces (display, soft old-style serif) + Karla (body, humanist sans) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -63,22 +65,55 @@
   <main id="main">
 
     <!-- ============ HERO ============ -->
+    <!-- Layout: two-column grid (row/col-lg-6). Component: Carousel (slider). -->
     <header class="vlrs-hero" id="hero">
-      <div class="vlrs-ripples" aria-hidden="true">
-        <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="300" cy="300" r="90"></circle>
-          <circle cx="300" cy="300" r="170"></circle>
-          <circle cx="300" cy="300" r="250"></circle>
-          <circle cx="300" cy="300" r="330"></circle>
-        </svg>
-      </div>
-      <div class="container vlrs-hero-inner">
-        <p class="vlrs-eyebrow">A Bathhouse &amp; Wellness Atelier</p>
-        <h1 class="vlrs-hero-title">Where stillness<br>has <em>texture</em></h1>
-        <p class="vlrs-hero-sub">Thermal pools, warm oils, and the slow architecture of rest —<br class="d-none d-md-block"> an hour set aside for nothing but yourself.</p>
-        <div class="vlrs-hero-actions">
-          <a href="#reserve" class="vlrs-btn vlrs-btn-solid">Reserve Your Ritual</a>
-          <a href="#ritual" class="vlrs-link-arrow">See how it unfolds ↓</a>
+      <div class="container">
+        <div class="row align-items-center gy-5 vlrs-hero-inner">
+          <div class="col-lg-6">
+            <p class="vlrs-eyebrow">A Bathhouse &amp; Wellness Atelier</p>
+            <h1 class="vlrs-hero-title">Where stillness<br>has <em>texture</em></h1>
+            <p class="vlrs-hero-sub">Thermal pools, warm oils, and the slow architecture of rest — an hour set aside for nothing but yourself.</p>
+            <div class="vlrs-hero-actions">
+              <a href="#reserve" class="vlrs-btn vlrs-btn-solid">Reserve Your Ritual</a>
+              <a href="#ritual" class="vlrs-link-arrow">See how it unfolds ↓</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <!-- Each slide is a real <img> placeholder — swap the src with your own photo -->
+            <!-- and it will drop straight in. See chat for the exact shot list. -->
+            <div id="heroCarousel" class="carousel slide vlrs-hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="ratio ratio-4x3">
+                    <img src="assets/hero/warm-pool.jpg" alt="Photo needed: the warm pool, steam rising, low warm light" class="vlrs-hero-img" loading="lazy">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="ratio ratio-4x3">
+                    <img src="assets/hero/entrance-courtyard.jpg" alt="Photo needed: entrance courtyard, warm morning light" class="vlrs-hero-img" loading="lazy">
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="ratio ratio-4x3">
+                    <img src="assets/hero/resting-hall.jpg" alt="Photo needed: resting hall, candlelight, linen texture" class="vlrs-hero-img" loading="lazy">
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="vlrs-carousel-arrow" aria-hidden="true">‹</span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="vlrs-carousel-arrow" aria-hidden="true">›</span>
+                <span class="visually-hidden">Next</span>
+              </button>
+              <div class="vlrs-carousel-dots vlrs-hero-dots">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -256,13 +291,6 @@
     <!-- ============ THE BATHS ============ -->
     <!-- Component: Tooltip -->
     <section class="vlrs-section vlrs-bg-deep" id="baths">
-      <div class="vlrs-ripples vlrs-ripples-right" aria-hidden="true">
-        <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="300" cy="300" r="90"></circle>
-          <circle cx="300" cy="300" r="170"></circle>
-          <circle cx="300" cy="300" r="250"></circle>
-        </svg>
-      </div>
       <div class="container">
         <div class="vlrs-section-head vlrs-section-head-light">
           <p class="vlrs-eyebrow">The Baths</p>
@@ -300,40 +328,51 @@
     </section>
 
     <!-- ============ THE SPACE (gallery) ============ -->
-    <!-- Layout: container-fluid + flex/overflow utilities + ratio helper. -->
-    <!-- These frames are placeholders — see the note in chat for the exact shot list. -->
-    <section class="vlrs-section vlrs-bg-cream vlrs-gallery-section" id="gallery">
+    <!-- Layout: real Bootstrap grid (row-cols) + ratio helper. -->
+    <!-- Every <img> below is a placeholder path — replace the src with your own -->
+    <!-- photo at the same filename and it drops in automatically. Shot list in chat. -->
+    <section class="vlrs-section vlrs-bg-cream" id="gallery">
       <div class="container">
         <div class="vlrs-section-head">
           <p class="vlrs-eyebrow vlrs-eyebrow-dark">The Space</p>
           <h2 class="vlrs-h2">A quick look around</h2>
         </div>
-      </div>
-      <div class="container-fluid px-0">
-        <div class="d-flex flex-nowrap overflow-x-auto vlrs-gallery-strip gap-3 px-3 px-md-5">
-          <div class="vlrs-gallery-item flex-shrink-0">
-            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-a"></div>
-            <span class="vlrs-gallery-label">Entrance courtyard</span>
+        <div class="row row-cols-2 row-cols-md-3 g-3 g-md-4">
+          <div class="col">
+            <figure class="vlrs-gallery-figure">
+              <div class="ratio ratio-4x3"><img src="assets/gallery/entrance-courtyard.jpg" alt="Photo needed: entrance courtyard" class="vlrs-gallery-img" loading="lazy"></div>
+              <figcaption>Entrance courtyard</figcaption>
+            </figure>
           </div>
-          <div class="vlrs-gallery-item flex-shrink-0">
-            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-b"></div>
-            <span class="vlrs-gallery-label">The warm pool</span>
+          <div class="col">
+            <figure class="vlrs-gallery-figure">
+              <div class="ratio ratio-4x3"><img src="assets/gallery/warm-pool.jpg" alt="Photo needed: the warm pool" class="vlrs-gallery-img" loading="lazy"></div>
+              <figcaption>The warm pool</figcaption>
+            </figure>
           </div>
-          <div class="vlrs-gallery-item flex-shrink-0">
-            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-c"></div>
-            <span class="vlrs-gallery-label">Resting hall</span>
+          <div class="col">
+            <figure class="vlrs-gallery-figure">
+              <div class="ratio ratio-4x3"><img src="assets/gallery/resting-hall.jpg" alt="Photo needed: resting hall" class="vlrs-gallery-img" loading="lazy"></div>
+              <figcaption>Resting hall</figcaption>
+            </figure>
           </div>
-          <div class="vlrs-gallery-item flex-shrink-0">
-            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-d"></div>
-            <span class="vlrs-gallery-label">Robes &amp; linen detail</span>
+          <div class="col">
+            <figure class="vlrs-gallery-figure">
+              <div class="ratio ratio-4x3"><img src="assets/gallery/linen-detail.jpg" alt="Photo needed: robes and linen detail" class="vlrs-gallery-img" loading="lazy"></div>
+              <figcaption>Robes &amp; linen detail</figcaption>
+            </figure>
           </div>
-          <div class="vlrs-gallery-item flex-shrink-0">
-            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-e"></div>
-            <span class="vlrs-gallery-label">Garden Room suite</span>
+          <div class="col">
+            <figure class="vlrs-gallery-figure">
+              <div class="ratio ratio-4x3"><img src="assets/gallery/garden-room.jpg" alt="Photo needed: Garden Room suite" class="vlrs-gallery-img" loading="lazy"></div>
+              <figcaption>Garden Room suite</figcaption>
+            </figure>
           </div>
-          <div class="vlrs-gallery-item flex-shrink-0">
-            <div class="ratio ratio-4x3 vlrs-gallery-frame vlrs-frame-f"></div>
-            <span class="vlrs-gallery-label">Treatment room</span>
+          <div class="col">
+            <figure class="vlrs-gallery-figure">
+              <div class="ratio ratio-4x3"><img src="assets/gallery/treatment-room.jpg" alt="Photo needed: treatment room" class="vlrs-gallery-img" loading="lazy"></div>
+              <figcaption>Treatment room</figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -350,7 +389,7 @@
         <div class="row g-4">
           <div class="col-lg-4">
             <div class="card vlrs-suite">
-              <div class="ratio ratio-4x3 vlrs-suite-swatch vlrs-swatch-blush"></div>
+              <div class="ratio ratio-4x3 vlrs-suite-swatch"><img src="assets/suites/garden-room.jpg" alt="Photo needed: Garden Room interior, soaking tub, garden view" class="vlrs-suite-img" loading="lazy"></div>
               <div class="card-body vlrs-suite-body">
                 <h3 class="vlrs-h3">The Garden Room</h3>
                 <p>Opens onto the herb garden, with a soaking tub built into the floor.</p>
@@ -364,7 +403,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card vlrs-suite">
-              <div class="ratio ratio-4x3 vlrs-suite-swatch vlrs-swatch-gold"></div>
+              <div class="ratio ratio-4x3 vlrs-suite-swatch"><img src="assets/suites/attic-room.jpg" alt="Photo needed: Attic Room interior, copper tub, skylight" class="vlrs-suite-img" loading="lazy"></div>
               <div class="card-body vlrs-suite-body">
                 <h3 class="vlrs-h3">The Attic Room</h3>
                 <p>Vaulted ceilings and a copper tub set beneath a skylight.</p>
@@ -378,7 +417,7 @@
           </div>
           <div class="col-lg-4">
             <div class="card vlrs-suite">
-              <div class="ratio ratio-4x3 vlrs-suite-swatch vlrs-swatch-wine"></div>
+              <div class="ratio ratio-4x3 vlrs-suite-swatch"><img src="assets/suites/quiet-room.jpg" alt="Photo needed: Quiet Room interior, dark and windowless" class="vlrs-suite-img" loading="lazy"></div>
               <div class="card-body vlrs-suite-body">
                 <h3 class="vlrs-h3">The Quiet Room</h3>
                 <p>No windows, no clock. Built for one purpose only — sleep.</p>
@@ -662,10 +701,14 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body">
-          <svg class="vlrs-modal-ripple" viewBox="0 0 100 100" aria-hidden="true">
-            <circle cx="50" cy="50" r="14"></circle>
-            <circle cx="50" cy="50" r="26"></circle>
-            <circle cx="50" cy="50" r="38"></circle>
+          <svg class="vlrs-modal-mark" viewBox="115 85 150 160" aria-hidden="true">
+            <path d="M190,225 C170,195 150,155 145,100" />
+            <path d="M160,168 C145,163 135,148 140,133" />
+            <path d="M150,123 C138,115 130,123 132,138" />
+            <path d="M190,225 C210,195 230,155 235,100" />
+            <path d="M220,168 C235,163 245,148 240,133" />
+            <path d="M230,123 C242,115 250,123 248,138" />
+            <circle cx="190" cy="229" r="5"></circle>
           </svg>
           <h3 class="vlrs-h3">Request received</h3>
           <p>Thank you — we'll confirm your ritual by email within a day, and hold your pool time until then.</p>

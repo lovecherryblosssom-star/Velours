@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ---- Gentle reveal-on-scroll for section headers and cards ---- */
   var revealTargets = document.querySelectorAll(
-    ".vlrs-section-head, .vlrs-card, .vlrs-ritual-step, .vlrs-suite, .vlrs-journal-card, .vlrs-pool, .vlrs-gallery-item"
+    ".vlrs-section-head, .vlrs-card, .vlrs-ritual-step, .vlrs-suite, .vlrs-journal-card, .vlrs-pool, .vlrs-gallery-figure"
   );
   revealTargets.forEach(function (el) { el.classList.add("vlrs-reveal"); });
 
