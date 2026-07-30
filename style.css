@@ -277,9 +277,9 @@ img, svg { max-width: 100%; display: block; }
   background: rgba(43, 17, 25, 0.4);
 }
 .carousel-control-prev, .carousel-control-next { width: 15%; opacity: 1; }
-.vlrs-hero-dots { position: absolute; bottom: 1.25rem; left: 50%; transform: translateX(-50%); margin: 0; z-index: 3; }
-.vlrs-hero-dots button { border-color: var(--cream); }
-.vlrs-hero-dots button.active { background: var(--cream); }
+.vlrs-carousel-dots.vlrs-hero-dots { position: absolute; right: auto; bottom: 1.25rem; left: 50%; transform: translateX(-50%); margin: 0; z-index: 3; }
+.vlrs-carousel-dots.vlrs-hero-dots [data-bs-target] { border-color: var(--cream); }
+.vlrs-carousel-dots.vlrs-hero-dots [data-bs-target].active { background: var(--cream); }
 
 .vlrs-hero-title {
   font-size: clamp(2.6rem, 6.5vw, 5rem);
@@ -324,18 +324,20 @@ img, svg { max-width: 100%; display: block; }
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--blush);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0 auto;
+  overflow: hidden;
 }
-.vlrs-sprig { width: 45%; }
-.vlrs-sprig path {
-  fill: none;
-  stroke: var(--wine);
-  stroke-width: 2.5;
-  stroke-linecap: round;
+.vlrs-philosophy-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--blush);
+  color: var(--wine-deep);
+  font-size: 0.8rem;
+  text-align: center;
+  transition: transform 0.5s ease;
 }
+.vlrs-mark-wrap:hover .vlrs-philosophy-img { transform: scale(1.06); }
 
 .vlrs-dropcap {
   font-family: var(--font-display);
@@ -495,7 +497,9 @@ img, svg { max-width: 100%; display: block; }
   color: var(--wine-deep);
   font-size: 0.75rem;
   text-align: center;
+  transition: transform 0.5s ease;
 }
+.vlrs-gallery-figure .ratio:hover .vlrs-gallery-img { transform: scale(1.06); }
 .vlrs-gallery-figure figcaption {
   margin-top: 0.65rem;
   font-size: 0.78rem;
@@ -513,7 +517,9 @@ img, svg { max-width: 100%; display: block; }
   color: var(--wine-deep);
   font-size: 0.8rem;
   text-align: center;
+  transition: transform 0.5s ease;
 }
+.vlrs-suite-swatch:hover .vlrs-suite-img { transform: scale(1.06); }
 .vlrs-suite-body { padding: 1.5rem 0.25rem 0; }
 .vlrs-suite-body p { color: var(--ink); max-width: 32ch; margin-bottom: 1rem; }
 .vlrs-suite .vlrs-price { color: var(--wine); font-size: 1.05rem; }
@@ -549,20 +555,24 @@ img, svg { max-width: 100%; display: block; }
   color: var(--taupe);
 }
 .vlrs-carousel-dots {
+  position: static;
+  right: auto; left: auto; bottom: auto;
   display: flex;
   justify-content: center;
   gap: 0.6rem;
-  margin-top: 2rem;
+  margin: 2rem 0 0;
+  padding: 0;
 }
-.vlrs-carousel-dots button {
+.vlrs-carousel-dots [data-bs-target] {
   width: 8px; height: 8px;
   border-radius: 50%;
   border: 1px solid var(--wine);
   background: transparent;
   padding: 0;
   opacity: 0.5;
+  text-indent: 0;
 }
-.vlrs-carousel-dots button.active { background: var(--wine); opacity: 1; }
+.vlrs-carousel-dots [data-bs-target].active { background: var(--wine); opacity: 1; }
 
 /* =============== JOURNAL =============== */
 .vlrs-journal-card .card-body { padding: 0; }
@@ -657,6 +667,12 @@ img, svg { max-width: 100%; display: block; }
   width: 4.5rem;
   flex-shrink: 0;
   padding-top: 0.15rem;
+}
+.vlrs-contact-block a, .vlrs-offcanvas-line a {
+  border-bottom: 1px solid transparent;
+}
+.vlrs-contact-block a:hover, .vlrs-offcanvas-line a:hover {
+  border-bottom-color: currentColor;
 }
 
 .vlrs-label {
@@ -762,9 +778,20 @@ textarea.vlrs-input { resize: vertical; }
   border-radius: 2px;
 }
 .vlrs-modal .modal-body { padding: 3rem 2.5rem; text-align: center; }
-.vlrs-modal-mark { width: 56px; margin: 0 auto 1.5rem; }
-.vlrs-modal-mark path, .vlrs-modal-mark circle { fill: none; stroke: var(--wine); stroke-width: 3; stroke-linecap: round; }
+.vlrs-modal-mark { width: 44px; margin: 0 auto 1.5rem; }
+.vlrs-modal-mark path { fill: var(--wine); }
 .vlrs-modal p { color: var(--ink); margin-bottom: 1.75rem; }
+
+/* Account modal (sign in / create account) */
+.vlrs-account-modal .modal-body { text-align: left; position: relative; padding: 2.75rem; }
+.vlrs-account-close { position: absolute; top: 1.25rem; right: 1.25rem; }
+.vlrs-account-pills { border-bottom: none; }
+.vlrs-account-modal .vlrs-input { color: var(--wine-deep); border-bottom-color: var(--blush-deep); }
+.vlrs-account-modal .vlrs-input:focus { border-bottom-color: var(--wine); }
+.vlrs-account-modal .vlrs-label { color: var(--taupe); }
+.vlrs-account-modal .vlrs-input::placeholder { color: var(--taupe); }
+.vlrs-account-alt { text-align: center; margin: 1.25rem 0 0; font-size: 0.85rem; }
+.vlrs-account-alt a { border-bottom: 1px solid var(--gold); color: var(--wine); }
 
 /* =============== OFFCANVAS =============== */
 .vlrs-offcanvas {
@@ -834,6 +861,10 @@ textarea.vlrs-input { resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .vlrs-reveal { opacity: 1; transform: none; transition: none; }
+  .vlrs-gallery-img, .vlrs-suite-img, .vlrs-philosophy-img { transition: none; }
+  .vlrs-gallery-figure .ratio:hover .vlrs-gallery-img,
+  .vlrs-suite-swatch:hover .vlrs-suite-img,
+  .vlrs-mark-wrap:hover .vlrs-philosophy-img { transform: none; }
 }
 
 /* =============== RESPONSIVE =============== */

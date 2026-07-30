@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -50,6 +50,11 @@
           <li class="nav-item">
             <button type="button" class="nav-link vlrs-visit-link" data-bs-toggle="offcanvas" data-bs-target="#visitOffcanvas" aria-controls="visitOffcanvas">
               <i class="bi bi-geo-alt"></i> Visit
+            </button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="nav-link vlrs-visit-link" data-bs-toggle="modal" data-bs-target="#accountModal">
+              <i class="bi bi-person"></i> Account
             </button>
           </li>
           <li class="nav-item ms-lg-3">
@@ -105,7 +110,7 @@
                 <span class="vlrs-carousel-arrow" aria-hidden="true">›</span>
                 <span class="visually-hidden">Next</span>
               </button>
-              <div class="vlrs-carousel-dots vlrs-hero-dots">
+              <div class="carousel-indicators vlrs-carousel-dots vlrs-hero-dots">
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
@@ -122,14 +127,7 @@
         <div class="row align-items-center gy-5">
           <div class="col-lg-5">
             <div class="vlrs-mark-wrap">
-              <svg class="vlrs-sprig" viewBox="0 0 200 260" aria-hidden="true">
-                <path d="M100 250 C 100 180, 100 120, 100 20" />
-                <path d="M100 60 C 70 50, 50 30, 40 10" />
-                <path d="M100 90 C 130 80, 150 60, 158 40" />
-                <path d="M100 120 C 68 112, 46 94, 36 74" />
-                <path d="M100 150 C 132 142, 154 124, 164 104" />
-                <path d="M100 180 C 72 172, 52 156, 44 138" />
-              </svg>
+              <img src="philosophy.jpg" alt="Photo needed: hands resting at the edge of a stone basin, or a single candle beside folded linen — a close, quiet detail rather than a full room" class="vlrs-philosophy-img" loading="lazy">
             </div>
           </div>
           <div class="col-lg-7">
@@ -450,7 +448,7 @@
               <p class="vlrs-quote-attr">— A. Farooqi</p>
             </div>
           </div>
-          <div class="vlrs-carousel-dots">
+          <div class="carousel-indicators vlrs-carousel-dots">
             <button type="button" data-bs-target="#vlrsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Testimonial 1"></button>
             <button type="button" data-bs-target="#vlrsCarousel" data-bs-slide-to="1" aria-label="Testimonial 2"></button>
             <button type="button" data-bs-target="#vlrsCarousel" data-bs-slide-to="2" aria-label="Testimonial 3"></button>
@@ -460,15 +458,15 @@
     </section>
 
     <!-- ============ JOURNAL ============ -->
-    <!-- Components: Card, Pagination -->
+    <!-- Components: Card, Pagination (functional — 3 real pages, swapped via script.js) -->
     <section class="vlrs-section vlrs-bg-cream" id="journal">
       <div class="container">
         <div class="vlrs-section-head">
           <p class="vlrs-eyebrow vlrs-eyebrow-dark">Journal</p>
           <h2 class="vlrs-h2">Notes from the bathhouse</h2>
         </div>
-        <div class="row g-4">
-          <div class="col-lg-4">
+        <div class="row g-4" id="journalGrid">
+          <div class="col-lg-4 vlrs-journal-item" data-page="1">
             <article class="card vlrs-journal-card">
               <div class="card-body">
                 <p class="vlrs-kicker">Ritual</p>
@@ -477,7 +475,7 @@
               </div>
             </article>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 vlrs-journal-item" data-page="1">
             <article class="card vlrs-journal-card">
               <div class="card-body">
                 <p class="vlrs-kicker">Practice</p>
@@ -486,7 +484,7 @@
               </div>
             </article>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 vlrs-journal-item" data-page="1">
             <article class="card vlrs-journal-card">
               <div class="card-body">
                 <p class="vlrs-kicker">Dispatches</p>
@@ -495,14 +493,68 @@
               </div>
             </article>
           </div>
+          <div class="col-lg-4 vlrs-journal-item d-none" data-page="2">
+            <article class="card vlrs-journal-card">
+              <div class="card-body">
+                <p class="vlrs-kicker">Ritual</p>
+                <h3 class="vlrs-h3"><a href="#">The Four Movements, Explained</a></h3>
+                <p>A closer look at why Arrive, Immerse, Rest, and Renew happen in that order, and never any other.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4 vlrs-journal-item d-none" data-page="2">
+            <article class="card vlrs-journal-card">
+              <div class="card-body">
+                <p class="vlrs-kicker">Practice</p>
+                <h3 class="vlrs-h3"><a href="#">Why We Keep the Water at 34°C</a></h3>
+                <p>The mineral pool's temperature was tested for two years before we settled on it. Here's why.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4 vlrs-journal-item d-none" data-page="2">
+            <article class="card vlrs-journal-card">
+              <div class="card-body">
+                <p class="vlrs-kicker">Dispatches</p>
+                <h3 class="vlrs-h3"><a href="#">A Letter From Our Longest Guest</a></h3>
+                <p>She's been coming every Thursday since we opened. We finally asked her why.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4 vlrs-journal-item d-none" data-page="3">
+            <article class="card vlrs-journal-card">
+              <div class="card-body">
+                <p class="vlrs-kicker">Ritual</p>
+                <h3 class="vlrs-h3"><a href="#">On Silence as a House Rule</a></h3>
+                <p>Why we ask guests to leave their phones at the door, and what happens in the hour after they do.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4 vlrs-journal-item d-none" data-page="3">
+            <article class="card vlrs-journal-card">
+              <div class="card-body">
+                <p class="vlrs-kicker">Practice</p>
+                <h3 class="vlrs-h3"><a href="#">The Case for Robes Over Towels</a></h3>
+                <p>A small argument for weight, drape, and the particular comfort of linen against skin.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-lg-4 vlrs-journal-item d-none" data-page="3">
+            <article class="card vlrs-journal-card">
+              <div class="card-body">
+                <p class="vlrs-kicker">Dispatches</p>
+                <h3 class="vlrs-h3"><a href="#">What We Learned From a Decade of Steam</a></h3>
+                <p>Ten years in, the lessons that changed how we run every room in the house.</p>
+              </div>
+            </article>
+          </div>
         </div>
         <nav aria-label="Journal pages" class="vlrs-pagination-wrap">
-          <ul class="pagination vlrs-pagination justify-content-center">
-            <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">‹</a></li>
-            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">›</a></li>
+          <ul class="pagination vlrs-pagination justify-content-center" id="journalPagination">
+            <li class="page-item disabled" data-role="prev"><a class="page-link" href="#" tabindex="-1" aria-disabled="true">‹</a></li>
+            <li class="page-item active" aria-current="page" data-page="1"><a class="page-link" href="#">1</a></li>
+            <li class="page-item" data-page="2"><a class="page-link" href="#">2</a></li>
+            <li class="page-item" data-page="3"><a class="page-link" href="#">3</a></li>
+            <li class="page-item" data-role="next"><a class="page-link" href="#">›</a></li>
           </ul>
         </nav>
       </div>
@@ -598,7 +650,7 @@
             <div class="vlrs-contact-block">
               <p><span>Visit</span>14 Willow Lane, Garden District</p>
               <p><span>Hours</span>7am – 10pm, daily</p>
-              <p><span>Call</span>+1 (555) 014‑2200</p>
+              <p><span>Call</span><a href="tel:+923011246675">+92 301 1246675</a></p>
               <p><span>Write</span>reserve@velours.example</p>
             </div>
           </div>
@@ -699,14 +751,10 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-body">
-          <svg class="vlrs-modal-mark" viewBox="115 85 150 160" aria-hidden="true">
-            <path d="M190,225 C170,195 150,155 145,100" />
-            <path d="M160,168 C145,163 135,148 140,133" />
-            <path d="M150,123 C138,115 130,123 132,138" />
-            <path d="M190,225 C210,195 230,155 235,100" />
-            <path d="M220,168 C235,163 245,148 240,133" />
-            <path d="M230,123 C242,115 250,123 248,138" />
-            <circle cx="190" cy="229" r="5"></circle>
+          <svg class="vlrs-modal-mark" viewBox="0 0 160 160" aria-hidden="true">
+            <g transform="translate(0.149,148.000) scale(0.097143,-0.097143)">
+              <path d="M1014 1393Q1014 1396 1017.0 1398.0Q1020 1400 1025 1400H1416Q1421 1400 1423.5 1398.5Q1426 1397 1426 1394Q1426 1391 1423.5 1389.5Q1421 1388 1413 1385L1388 1376Q1355 1363 1314.0 1324.5Q1273 1286 1232.0 1234.5Q1191 1183 1156 1128L554 178Q544 163 537.0 147.0Q530 131 523 109L500 34Q494 17 482.5 8.5Q471 0 453 0H296Q280 0 273.5 10.0Q267 20 272 40L299 139Q303 154 304.5 168.5Q306 183 306 193Q308 218 309.5 277.0Q311 336 313.0 419.5Q315 503 317.0 599.5Q319 696 321.0 797.0Q323 898 325.0 992.5Q327 1087 328.5 1165.5Q330 1244 330 1296Q332 1333 325.0 1349.0Q318 1365 296 1369L231 1384Q223 1386 220.5 1387.5Q218 1389 218 1393Q218 1397 221.5 1398.5Q225 1400 231 1400H742Q747 1400 749.5 1398.5Q752 1397 752 1394Q752 1391 749.5 1389.0Q747 1387 739 1385L642 1369Q614 1365 602.5 1343.5Q591 1322 590 1289Q588 1229 585.0 1154.0Q582 1079 579.5 992.5Q577 906 574.0 810.5Q571 715 567.5 613.0Q564 511 560.5 404.0Q557 297 553 188L507 135L1141 1138Q1180 1199 1177.0 1248.0Q1174 1297 1144.0 1330.5Q1114 1364 1069 1375L1027 1384Q1014 1386 1014 1393Z"/>
+            </g>
           </svg>
           <h3 class="vlrs-h3">Request received</h3>
           <p>Thank you — we'll confirm your ritual by email within a day, and hold your pool time until then.</p>
@@ -732,17 +780,73 @@
           <tr><td>Sunday</td><td>8am – 8pm</td></tr>
         </tbody>
       </table>
-      <p class="vlrs-offcanvas-line"><i class="bi bi-telephone"></i> +1 (555) 014-2200</p>
+      <p class="vlrs-offcanvas-line"><i class="bi bi-telephone"></i> <a href="tel:+923011246675">+92 301 1246675</a></p>
       <p class="vlrs-offcanvas-line"><i class="bi bi-envelope"></i> reserve@velours.example</p>
       <a href="#reserve" class="vlrs-btn vlrs-btn-solid vlrs-btn-full" data-bs-dismiss="offcanvas">Reserve a Ritual</a>
     </div>
   </div>
 
-  <!-- ============ NEWSLETTER TOAST ============ -->
+  <!-- ============ ACCOUNT: SIGN IN / CREATE ACCOUNT ============ -->
+  <!-- Front-end only — see script.js note. There's no backend behind this site, -->
+  <!-- so nothing typed here is actually stored anywhere. -->
+  <div class="modal fade vlrs-modal vlrs-account-modal" id="accountModal" tabindex="-1" aria-labelledby="accountModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close vlrs-account-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+          <ul class="nav nav-pills vlrs-pills vlrs-account-pills justify-content-center mb-4" id="accountTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="signin-tab" data-bs-toggle="tab" data-bs-target="#signin-pane" type="button" role="tab" aria-controls="signin-pane" aria-selected="true">Sign In</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup-pane" type="button" role="tab" aria-controls="signup-pane" aria-selected="false">Create Account</button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="accountTabsContent">
+            <div class="tab-pane fade show active" id="signin-pane" role="tabpanel" aria-labelledby="signin-tab" tabindex="0">
+              <form class="vlrs-form" id="signInForm" novalidate>
+                <div class="mb-3">
+                  <label for="siEmail" class="vlrs-label">Email</label>
+                  <input type="email" class="vlrs-input" id="siEmail" required>
+                </div>
+                <div class="mb-3">
+                  <label for="siPassword" class="vlrs-label">Password</label>
+                  <input type="password" class="vlrs-input" id="siPassword" required minlength="6">
+                </div>
+                <button type="submit" class="vlrs-btn vlrs-btn-solid vlrs-btn-full">Sign In</button>
+                <p class="vlrs-account-alt"><a href="#">Forgot password?</a></p>
+              </form>
+            </div>
+            <div class="tab-pane fade" id="signup-pane" role="tabpanel" aria-labelledby="signup-tab" tabindex="0">
+              <form class="vlrs-form" id="signUpForm" novalidate>
+                <div class="mb-3">
+                  <label for="suName" class="vlrs-label">Name</label>
+                  <input type="text" class="vlrs-input" id="suName" required>
+                </div>
+                <div class="mb-3">
+                  <label for="suEmail" class="vlrs-label">Email</label>
+                  <input type="email" class="vlrs-input" id="suEmail" required>
+                </div>
+                <div class="mb-3">
+                  <label for="suPassword" class="vlrs-label">Password</label>
+                  <input type="password" class="vlrs-input" id="suPassword" required minlength="6">
+                </div>
+                <button type="submit" class="vlrs-btn vlrs-btn-solid vlrs-btn-full">Create Account</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ NEWSLETTER / ACCOUNT TOAST (shared, text set by script.js) ============ -->
   <div class="toast-container position-fixed bottom-0 end-0 p-3 vlrs-toast-container">
     <div id="vlrsToast" class="toast vlrs-toast" role="status" aria-live="polite" aria-atomic="true">
       <div class="toast-body d-flex align-items-center justify-content-between">
-        <span>Thank you — you're on the list.</span>
+        <span id="vlrsToastText">Thank you — you're on the list.</span>
         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
     </div>

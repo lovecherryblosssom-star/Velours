@@ -108,6 +108,15 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ---- Newsletter signup: confirm with a toast rather than a page reload ---- */
   var newsletter = document.getElementById("vlrsNewsletter");
   var toastEl = document.getElementById("vlrsToast");
+  var toastText = document.getElementById("vlrsToastText");
+
+  function showToast(message) {
+    toastText.textContent = message;
+    if (window.bootstrap) {
+      var toast = window.bootstrap.Toast.getOrCreateInstance(toastEl);
+      toast.show();
+    }
+  }
 
   newsletter.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -116,11 +125,92 @@ document.addEventListener("DOMContentLoaded", function () {
       input.reportValidity();
       return;
     }
-    if (window.bootstrap) {
-      var toast = window.bootstrap.Toast.getOrCreateInstance(toastEl);
-      toast.show();
-    }
+    showToast("Thank you — you're on the list.");
     newsletter.reset();
+  });
+
+  /* ---- Account: Sign In / Create Account ----
+     This site has no backend (it's static files on GitHub Pages), so these
+     forms don't create or check real accounts — there's nowhere for the
+     data to go. They validate, give normal-feeling feedback, and reset.
+     If real accounts are ever needed, this is the spot to wire up a
+     backend/auth provider and swap these handlers for real API calls. */
+  var accountModalEl = document.getElementById("accountModal");
+
+  var signInForm = document.getElementById("signInForm");
+  signInForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!signInForm.checkValidity()) {
+      signInForm.reportValidity();
+      return;
+    }
+    if (window.bootstrap) {
+      window.bootstrap.Modal.getOrCreateInstance(accountModalEl).hide();
+    }
+    showToast("Signed in — welcome back.");
+    signInForm.reset();
+  });
+
+  var signUpForm = document.getElementById("signUpForm");
+  signUpForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!signUpForm.checkValidity()) {
+      signUpForm.reportValidity();
+      return;
+    }
+    if (window.bootstrap) {
+      window.bootstrap.Modal.getOrCreateInstance(accountModalEl).hide();
+    }
+    showToast("Account created — welcome to Velours.");
+    signUpForm.reset();
+  });
+
+  /* ---- Journal pagination: swaps which 3 entries are visible ---- */
+  var journalItems = document.querySelectorAll(".vlrs-journal-item");
+  var paginationEl = document.getElementById("journalPagination");
+  var pageLinks = paginationEl.querySelectorAll("li[data-page]");
+  var prevBtn = paginationEl.querySelector('li[data-role="prev"]');
+  var nextBtn = paginationEl.querySelector('li[data-role="next"]');
+  var totalPages = pageLinks.length;
+  var currentPage = 1;
+
+  function showJournalPage(page) {
+    currentPage = page;
+
+    journalItems.forEach(function (item) {
+      var match = item.getAttribute("data-page") === String(page);
+      item.classList.toggle("d-none", !match);
+    });
+
+    pageLinks.forEach(function (li) {
+      var isActive = li.getAttribute("data-page") === String(page);
+      li.classList.toggle("active", isActive);
+      if (isActive) {
+        li.setAttribute("aria-current", "page");
+      } else {
+        li.removeAttribute("aria-current");
+      }
+    });
+
+    prevBtn.classList.toggle("disabled", page === 1);
+    nextBtn.classList.toggle("disabled", page === totalPages);
+  }
+
+  pageLinks.forEach(function (li) {
+    li.querySelector(".page-link").addEventListener("click", function (e) {
+      e.preventDefault();
+      showJournalPage(parseInt(li.getAttribute("data-page"), 10));
+    });
+  });
+
+  prevBtn.querySelector(".page-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    if (currentPage > 1) showJournalPage(currentPage - 1);
+  });
+
+  nextBtn.querySelector(".page-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    if (currentPage < totalPages) showJournalPage(currentPage + 1);
   });
 
 });
