@@ -135,6 +135,12 @@ img, svg { max-width: 100%; display: block; }
   color: var(--wine-deep);
   border-bottom: 1px solid var(--gold);
   padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.vlrs-link-arrow:hover {
+  color: var(--wine);
+  border-color: var(--wine);
+  transform: translateY(2px);
 }
 
 /* =============== NAV =============== */
@@ -614,7 +620,9 @@ img, svg { max-width: 100%; display: block; }
   color: var(--wine-deep);
   padding: 1.5rem 0;
   box-shadow: none;
+  transition: color 0.2s ease;
 }
+.vlrs-accordion .accordion-button:hover { color: var(--wine); }
 .vlrs-accordion .accordion-button:not(.collapsed) { color: var(--wine); }
 .vlrs-accordion .accordion-button::after {
   filter: sepia(60%) saturate(300%) hue-rotate(325deg) brightness(0.9);
@@ -791,7 +799,12 @@ textarea.vlrs-input { resize: vertical; }
 .vlrs-account-modal .vlrs-label { color: var(--taupe); }
 .vlrs-account-modal .vlrs-input::placeholder { color: var(--taupe); }
 .vlrs-account-alt { text-align: center; margin: 1.25rem 0 0; font-size: 0.85rem; }
-.vlrs-account-alt a { border-bottom: 1px solid var(--gold); color: var(--wine); }
+.vlrs-account-alt a {
+  border-bottom: 1px solid var(--gold);
+  color: var(--wine);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.vlrs-account-alt a:hover { color: var(--wine-deep); border-color: var(--wine-deep); }
 
 /* =============== OFFCANVAS =============== */
 .vlrs-offcanvas {
@@ -865,6 +878,7 @@ textarea.vlrs-input { resize: vertical; }
   .vlrs-gallery-figure .ratio:hover .vlrs-gallery-img,
   .vlrs-suite-swatch:hover .vlrs-suite-img,
   .vlrs-mark-wrap:hover .vlrs-philosophy-img { transform: none; }
+  .vlrs-link-arrow:hover { transform: none; }
 }
 
 /* =============== RESPONSIVE =============== */
